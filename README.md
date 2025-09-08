@@ -2,7 +2,7 @@
 Codes for the dissertation of 'Analysing Political Risk Regimes: Identifying Systematic Patterns and Shifts in Country Risk Measures Over Time'
 # ICRG Monthly Data Analysis Pipeline — README
 
-This is a small toolkit to turn ICRG Excel data into tidy monthly data, build simple composites, find risk **regimes** with HMMs, and make a few helpful charts/tables. It’s written to be easy to run for a postgraduate project.
+This toolkit provides a structured workflow to transform ICRG Monthly data into standardised monthly datasets, constructing aggregated risk indicators, applying Hidden Markov Models (HMMs) and K-means Clustering to identify underlying risk regimes, and generating visualisations and summary tables to support the analysis.
 
 ---
 
@@ -31,7 +31,7 @@ Reads the Excel, cleans dates/country names, and outputs a neat file.
 * Output: `ICRG_long_format.csv`
 
 **B. Select & Composites**
-Keeps study countries + window and builds monthly composites.
+Keeps study countries + window and builds aggregated monthly indicators.
 
 * Outputs: `ICRG_monthly_by_country_selected.csv`, `ICRG_monthly_aggregated_selected.csv`
 
@@ -81,9 +81,6 @@ python step_F_clustering.py
 # E) Global regimes chart
 python step_G_global_plot.py
 ```
-
-> Tip: If you only want the per‑country regime plots + a segments CSV, you can stop after **C1**.
-
 ---
 
 ## 4) Files you will get
@@ -129,6 +126,6 @@ python step_G_global_plot.py
 
 ## 7) One‑paragraph methods blurb
 
-Five ICRG components (Government Stability, Socioeconomic Conditions, Investment Profile, Internal Conflict, External Conflict) are combined into a monthly composite per country (simple mean by default). A 1D Gaussian HMM with `K=3` regimes is fit to the composite, order regimes by their mean levels, and summarises regime segments, switching rates, and cross‑country co‑movement via K‑means on decoded states.
+Five ICRG components (Government Stability, Socioeconomic Conditions, Investment Profile, Internal Conflict, External Conflict) are combined into aggregated monthly risk indices per country (simple mean by default). A 1D Gaussian HMM with `K=3` regimes is fit to the composite, order regimes by their mean levels, and summarises regime segments, switching rates, and cross‑country co‑movement via K‑means on decoded states.
 
 
