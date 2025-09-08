@@ -1,6 +1,6 @@
 # dissertationcodes
 Codes for the dissertation of 'Analysing Political Risk Regimes: Identifying Systematic Patterns and Shifts in Country Risk Measures Over Time'
-# ICRG Monthly Pipeline — Simple README
+# ICRG Monthly Data Analysis Pipeline — README
 
 This is a small toolkit to turn ICRG Excel data into tidy monthly data, build simple composites, find risk **regimes** with HMMs, and make a few helpful charts/tables. It’s written to be easy to run for a postgraduate project.
 
